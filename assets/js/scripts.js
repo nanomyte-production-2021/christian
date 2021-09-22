@@ -19,41 +19,7 @@ PAGE JS
 	});
 
 	/*===================================*
-	02. SMOOTH SCROLLING JS
-	*===================================*/
-	// Select all links with hashes
-	var headerHeight = $(".header_wrap").height() - 65;
-    $('a.page-scroll').on('click', function(event) {
-        // On-page links
-        if ( location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname ) {
-          // Figure out element to scroll to
-          var target = $(this.hash),
-              speed= $(this).data("speed") || 800;
-              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 
-          // Does a scroll target exist?
-          if (target.length) {
-            // Only prevent default if animation is actually gonna happen
-            event.preventDefault();
-            $('html, body').animate({
-              scrollTop: target.offset().top - headerHeight
-            }, speed);
-          }
-        }
-    });
-	
-	$(window).on("load resize ready",function () {
-		$(".header_wrap.fixed-top").css({"padding-top": $(".alertbox").height() });
-	})
-	$('.alertbox .close').on("click",function () {
-		$(".header_wrap ").css({"padding-top": "0" });
-	})
-
-	$(function () {
-		if ($('.header_wrap').hasClass('fixed-top')) {
-			$('.alertbox').addClass('alert_fixed');
-		}
-	});
 	
 	/*===================================*
 	03. MENU JS
